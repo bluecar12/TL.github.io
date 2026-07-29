@@ -147,8 +147,6 @@ h1 {
 .video-frame iframe {
   display: block;
   width: 100%;
-  max-width: 560px;   /* ← makes it less wide (adjust this number) */
-  margin: 0 auto;     /* ← keeps it centered */
   height: 70vh;          /* ← makes the video much taller */
   min-height: 420px;
   max-height: 720px;
