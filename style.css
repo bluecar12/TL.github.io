@@ -1,0 +1,245 @@
+/* Newspaper + Wedding elegant theme */
+
+:root {
+  --paper: #f7f1e3;
+  --ink: #1a1a1a;
+  --ink-soft: #3d3d3d;
+  --rule: #2c2c2c;
+  --accent: #8b5e3c; /* warm brown like aged print */
+  --highlight: #c9a66b; /* soft gold */
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #e8e0d0;
+  color: var(--ink);
+  font-family: 'Libre Baskerville', 'Times New Roman', serif;
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  padding: 2rem 1rem;
+}
+
+.paper {
+  background: var(--paper);
+  max-width: 720px;
+  width: 100%;
+  padding: 2.5rem 2rem 2rem;
+  box-shadow:
+    0 1px 3px rgba(0,0,0,0.12),
+    0 4px 12px rgba(0,0,0,0.08),
+    inset 0 0 40px rgba(139, 94, 60, 0.04);
+  border: 1px solid #d4c8b0;
+  position: relative;
+}
+
+/* subtle paper texture feel via grain (optional, pure CSS) */
+.paper::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  pointer-events: none;
+  opacity: 0.6;
+}
+
+/* Masthead – newspaper style */
+.masthead {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.edition {
+  font-family: 'Libre Baskerville', serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  margin-bottom: 0.4rem;
+}
+
+h1 {
+  font-family: 'Great Vibes', cursive;
+  font-size: clamp(2.8rem, 8vw, 4.2rem);
+  font-weight: 400;
+  color: var(--ink);
+  line-height: 1.1;
+  margin: 0.2rem 0 0.5rem;
+  text-shadow: 0 1px 0 rgba(255,255,255,0.4);
+}
+
+.tagline {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: 1.05rem;
+  color: var(--accent);
+  margin-bottom: 1rem;
+}
+
+.rule {
+  height: 2px;
+  background: linear-gradient(
+    to right,
+    transparent,
+    var(--rule) 15%,
+    var(--rule) 85%,
+    transparent
+  );
+  margin: 0.8rem auto;
+  max-width: 90%;
+}
+
+.rule::before,
+.rule::after {
+  content: none;
+}
+
+/* Double rule effect for classic newspaper */
+.masthead .rule {
+  height: 3px;
+  border-top: 1px solid var(--rule);
+  border-bottom: 1px solid var(--rule);
+  background: none;
+}
+
+/* Sections */
+.section-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.45rem;
+  font-weight: 700;
+  text-align: center;
+  letter-spacing: 0.04em;
+  margin-bottom: 1.2rem;
+  color: var(--ink);
+  text-transform: uppercase;
+}
+
+.section-title::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 1px;
+  background: var(--highlight);
+  margin: 0.5rem auto 0;
+}
+
+/* Video */
+.video-section {
+  margin-bottom: 1.5rem;
+}
+
+.video-frame {
+  background: #111;
+  border: 3px solid var(--rule);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.18);
+  overflow: hidden;
+  position: relative;
+}
+
+.video-frame video,
+.video-frame iframe {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border: none;
+  background: #000;
+}
+
+.caption {
+  font-family: 'Libre Baskerville', serif;
+  font-style: italic;
+  font-size: 0.9rem;
+  text-align: center;
+  color: var(--ink-soft);
+  margin-top: 0.75rem;
+}
+
+/* Divider */
+.divider {
+  text-align: center;
+  margin: 1.8rem 0;
+  color: var(--accent);
+  font-size: 1.1rem;
+  letter-spacing: 0.5em;
+}
+
+/* Links – newspaper notice style */
+.links-section {
+  margin-bottom: 1.5rem;
+}
+
+.link-list {
+  list-style: none;
+  max-width: 480px;
+  margin: 0 auto;
+}
+
+.link-list li {
+  padding: 0.9rem 0;
+  border-bottom: 1px dotted #c4b8a0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.link-list li:last-child {
+  border-bottom: none;
+}
+
+.link-list a {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.15rem;
+  color: var(--ink);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: color 0.2s, border-color 0.2s;
+}
+
+.link-list a:hover {
+  color: var(--accent);
+  border-bottom-color: var(--accent);
+}
+
+.link-note {
+  font-size: 0.85rem;
+  color: var(--ink-soft);
+  font-style: italic;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  margin-top: 1.5rem;
+}
+
+footer p {
+  font-size: 0.78rem;
+  letter-spacing: 0.06em;
+  color: var(--ink-soft);
+  margin-top: 0.8rem;
+}
+
+/* Responsive */
+@media (max-width: 520px) {
+  body {
+    padding: 1rem 0.5rem;
+  }
+
+  .paper {
+    padding: 1.8rem 1.2rem 1.5rem;
+  }
+
+  h1 {
+    font-size: 2.6rem;
+  }
+
+  .link-list a {
+    font-size: 1.05rem;
+  }
+}
