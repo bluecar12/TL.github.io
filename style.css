@@ -28,9 +28,9 @@ body {
 
 .paper {
   background: var(--paper);
-  max-width: 720px;
+  max-width: 980px;          /* wider overall page */
   width: 100%;
-  padding: 2.5rem 2rem 2rem;
+  padding: 2.5rem 1.5rem 2rem;
   box-shadow:
     0 1px 3px rgba(0,0,0,0.12),
     0 4px 12px rgba(0,0,0,0.08),
@@ -129,9 +129,9 @@ h1 {
   margin: 0.5rem auto 0;
 }
 
-/* Video */
+/* Video – larger, nearly full-width of the paper */
 .video-section {
-  margin-bottom: 1.5rem;
+  margin: 0 -0.5rem 1.8rem;   /* slight bleed toward the edges */
 }
 
 .video-frame {
@@ -140,6 +140,7 @@ h1 {
   box-shadow: 0 4px 16px rgba(0,0,0,0.18);
   overflow: hidden;
   position: relative;
+  width: 100%;
 }
 
 .video-frame video,
@@ -226,13 +227,17 @@ footer p {
 }
 
 /* Responsive */
-@media (max-width: 520px) {
+@media (max-width: 600px) {
   body {
-    padding: 1rem 0.5rem;
+    padding: 1rem 0.4rem;
   }
 
   .paper {
-    padding: 1.8rem 1.2rem 1.5rem;
+    padding: 1.6rem 0.8rem 1.4rem;
+  }
+
+  .video-section {
+    margin: 0 -0.3rem 1.5rem;
   }
 
   h1 {
