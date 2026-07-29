@@ -147,7 +147,10 @@ h1 {
 .video-frame iframe {
   display: block;
   width: 100%;
-  aspect-ratio: 16 / 9;
+  height: 70vh;          /* ← makes the video much taller */
+  min-height: 420px;
+  max-height: 720px;
+  object-fit: contain;   /* keeps the video from looking stretched */
   border: none;
   background: #000;
 }
